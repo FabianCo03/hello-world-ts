@@ -1,7 +1,7 @@
 import Opa5 from "sap/ui/test/Opa5";
 import Press from "sap/ui/test/actions/Press";
 
-const viewName = "com.myorg.myapp.view.Main";
+const viewName = "hello.world.ts.view.Main";
 
 export default class MainPage extends Opa5 {
 	// Actions
@@ -10,7 +10,8 @@ export default class MainPage extends Opa5 {
 			id: "helloButton",
 			viewName,
 			actions: new Press(),
-			errorMessage: "Did not find the 'Say Hello With Dialog' button on the Main view"
+			errorMessage:
+				"Did not find the 'Say Hello With Dialog' button on the Main view",
 		});
 	}
 
@@ -20,7 +21,7 @@ export default class MainPage extends Opa5 {
 			searchOpenDialogs: true,
 			viewName,
 			actions: new Press(),
-			errorMessage: "Did not find the 'OK' button in the Dialog"
+			errorMessage: "Did not find the 'OK' button in the Dialog",
 		});
 	}
 
@@ -32,7 +33,7 @@ export default class MainPage extends Opa5 {
 				// we set the view busy, so we need to query the parent of the app
 				Opa5.assert.ok(true, "The dialog is open");
 			},
-			errorMessage: "Did not find the dialog control"
+			errorMessage: "Did not find the dialog control",
 		});
 	}
 
@@ -44,7 +45,7 @@ export default class MainPage extends Opa5 {
 			},
 			success: function () {
 				Opa5.assert.ok(true, "No dialog is open");
-			}
+			},
 		});
 	}
 }

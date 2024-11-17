@@ -2,7 +2,7 @@
 	"_version": "1.12.0",
 
 	"sap.app": {
-		"id": "com.myorg.myapp",
+		"id": "hello.world.ts",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"title": "{{appTitle}}",
@@ -24,7 +24,7 @@
 
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "com.myorg.myapp.view.App",
+			"viewName": "hello.world.ts.view.App",
 			"type": "XML",
 			"async": true,
 			"id": "app"
@@ -34,7 +34,16 @@
 			"minUI5Version": "1.130.0",
 			"libs": {
 				"sap.ui.core": {},
-				"sap.m": {}
+				"sap.m": {},
+				"sap.ui.layout": {}
+			}
+		},
+
+		"resources": {
+			"preload": {
+				"modules": [
+					"sap.ui.layout"
+				]
 			}
 		},
 
@@ -49,7 +58,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "com.myorg.myapp.i18n.i18n"
+					"bundleName": "hello.world.ts.i18n.i18n"
 				}
 			}
 		},
@@ -58,7 +67,7 @@
 			"config": {
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
-				"viewPath": "com.myorg.myapp.view",
+				"viewPath": "hello.world.ts.view",
 				"controlId": "app",
 				"controlAggregation": "pages",
 				"async": true

@@ -1,17 +1,17 @@
 {
-  "generator-ui5-ts-app": {
-    "namespace": "com.myorg.myapp",
-    "framework": "OpenUI5",
-    "frameworkVersion": "1.130.0",
-    "author": "Fabian",
-    "initrepo": true,
-    "tstypes": "@openui5/types",
-    "tstypesVersion": "1.130.0",
-    "appId": "com.myorg.myapp",
-    "appURI": "com/myorg/myapp",
-    "cdnDomain": "sdk.openui5.org",
-    "defaultTheme": "sap_horizon",
-    "gte11150": true,
-    "setupCompleted": true
-  }
+	"generator-ui5-ts-app": {
+		"namespace": "hello.world.ts",
+		"framework": "OpenUI5",
+		"frameworkVersion": "1.130.0",
+		"author": "Fabian",
+		"initrepo": true,
+		"tstypes": "@openui5/types",
+		"tstypesVersion": "1.130.0",
+		"appId": "hello.world.ts",
+		"appURI": "hello/world/ts",
+		"cdnDomain": "sdk.openui5.org",
+		"defaultTheme": "sap_horizon",
+		"gte11150": true,
+		"setupCompleted": true
+	}
 }

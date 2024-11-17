@@ -3,7 +3,7 @@ import models from "./model/models";
 import Device from "sap/ui/Device";
 
 /**
- * @namespace com.myorg.myapp
+ * @namespace hello.world.ts
  */
 export default class Component extends UIComponent {
 	public static metadata = {
@@ -32,7 +32,10 @@ export default class Component extends UIComponent {
 	public getContentDensityClass(): string {
 		if (this.contentDensityClass === undefined) {
 			// check whether FLP has already set the content density class; do nothing in this case
-			if (document.body.classList.contains("sapUiSizeCozy") || document.body.classList.contains("sapUiSizeCompact")) {
+			if (
+				document.body.classList.contains("sapUiSizeCozy") ||
+				document.body.classList.contains("sapUiSizeCompact")
+			) {
 				this.contentDensityClass = "";
 			} else if (!Device.support.touch) {
 				// apply "compact" mode if touch is not supported

@@ -1,4 +1,10 @@
-# UI5 Application com.myorg.myapp
+# Explicación precarga de librerías para optimizar app
+
+ui5.yaml: Define el tipo de aplicación y las librerías que deben ser precargadas.
+manifest.json: Asegúrate de listar las librerías como dependencias, de modo que puedan ser accedidas en tiempo de ejecución.
+ui5-dist.yaml: Configura cómo se empaquetan las librerías para la distribución, optimizando los archivos para producción.
+
+# UI5 Application hello.world.ts
 
 Insert the purpose of this project and some interesting info here...
 

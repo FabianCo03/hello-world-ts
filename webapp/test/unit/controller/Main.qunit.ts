@@ -1,4 +1,4 @@
-import Main from "com/myorg/myapp/controller/Main.controller";
+import Main from "hello/world/ts/controller/Main.controller";
 
 QUnit.module("Sample Main controller test");
 

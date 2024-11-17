@@ -8,7 +8,7 @@ import Router from "sap/ui/core/routing/Router";
 import History from "sap/ui/core/routing/History";
 
 /**
- * @namespace com.myorg.myapp.controller
+ * @namespace hello.world.ts.controller
  */
 export default abstract class BaseController extends Controller {
 	/**
@@ -78,6 +78,18 @@ export default abstract class BaseController extends Controller {
 			window.history.go(-1);
 		} else {
 			this.getRouter().navTo("main", {}, undefined, true);
+		}
+	}
+
+	// Busy sacado de apps de ventas
+	busy(action: boolean) {
+		const [oPage] = this.getView().getContent()
+		if (oPage) {
+			if (action) {
+				oPage.setBusy(true)
+			} else {
+				oPage.setBusy(false)
+			}
 		}
 	}
 }

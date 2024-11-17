@@ -10,8 +10,8 @@ opaTest("Should open the Hello dialog", function () {
 	// Arrangements
 	onTheMainPage.iStartMyUIComponent({
 		componentConfig: {
-			name: "com.myorg.myapp"
-		}
+			name: "hello.world.ts",
+		},
 	});
 
 	// Actions
@@ -34,8 +34,8 @@ opaTest("Should close the Hello dialog", function () {
 	// Arrangements
 	onTheMainPage.iStartMyUIComponent({
 		componentConfig: {
-			name: "com.myorg.myapp"
-		}
+			name: "hello.world.ts",
+		},
 	});
 
 	// Actions
