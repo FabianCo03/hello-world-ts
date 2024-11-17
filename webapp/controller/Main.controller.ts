@@ -1,5 +1,6 @@
 import BaseController from "./BaseController";
 import JSONModel from "sap/ui/model/json/JSONModel";
+import { InputBase$ChangeEvent } from "sap/m/InputBase";
 
 // Types
 import { WeatherInfo } from "../types/weather.types"
@@ -32,5 +33,11 @@ export default class Main extends BaseController {
 			this.busy(false)
 			console.error(err);
 		}
+	}
+
+	locationChange(oEvent: InputBase$ChangeEvent) {
+		debugger
+		const oParameters = oEvent.getParameters()
+		const sValue = oParameters.value;
 	}
 }
