@@ -8,11 +8,10 @@
 
 	<Page title="Current Weather">
 		<content>
-			<Input change=".locationChange" placeholder="Enter Location" />
-
 			<form:SimpleForm>
+				<Input change=".locationChange" placeholder="Enter Location" />
 				<Label text="Place" />
-				<Text text="{main/PlaceName}" />
+				<Text text="{/CurrentWeather/sPlaceName}" />
 
 				<Label text="Temperature" />
 				<Text text="{/CurrentWeather/current_weather/temperature} °C" />

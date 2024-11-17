@@ -14,7 +14,3 @@ node_modules/
 
 .DS_Store
 .env
-
-# Libreria UI5-Tooling-Modules
-.ui-tooling-modules/
-
