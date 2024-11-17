@@ -7,6 +7,8 @@ import * as Nominatim from "nominatim-client";
 // Types
 import { WeatherInfo } from "../types/weather.types";
 
+// Servicios
+
 /**
  * @namespace hello.world.ts.controller
  */
@@ -59,7 +61,7 @@ export default class Main extends BaseController {
 					return this.loadWeatherData(
 						results[0].lat,
 						results[0].lon,
-						results[0].display_name
+						results[0].display_name,
 					); // for simplicity just use the first/best match
 				} else {
 					MessageBox.alert(`Location ${sValue} not found`, {
