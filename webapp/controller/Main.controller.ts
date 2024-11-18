@@ -61,7 +61,7 @@ export default class Main extends BaseController {
 					return this.loadWeatherData(
 						results[0].lat,
 						results[0].lon,
-						results[0].display_name,
+						results[0].display_name
 					); // for simplicity just use the first/best match
 				} else {
 					MessageBox.alert(`Location ${sValue} not found`, {

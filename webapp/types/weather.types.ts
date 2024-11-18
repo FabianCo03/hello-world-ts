@@ -1,8 +1,8 @@
-	type WeatherInfo = {
-		current_weather: {
-			temperature: number,
-			windspeed: number,
-			winddirection: number
-		},
-		sPlaceName: string
-	}
+export interface WeatherInfo {
+	current_weather: {
+		temperature: number;
+		windspeed: number;
+		winddirection: number;
+	};
+	sPlaceName: string;
+}
