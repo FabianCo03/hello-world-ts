@@ -5,7 +5,7 @@ import { InputBase$ChangeEvent } from "sap/m/InputBase";
 import * as Nominatim from "nominatim-client";
 
 // Types
-import { WeatherInfo } from "../types/weather.types";
+import { WeatherInfo } from "hello/world/ts/types/weather.types";
 
 // Servicios
 

@@ -1,51 +1,35 @@
+import Text from "sap/m/Text";
+import UI5Element from "sap/ui/core/Element";
 import Opa5 from "sap/ui/test/Opa5";
-import Press from "sap/ui/test/actions/Press";
+import EnterText from "sap/ui/test/actions/EnterText";
 
 const viewName = "hello.world.ts.view.Main";
 
 export default class MainPage extends Opa5 {
 	// Actions
-	iPressTheSayHelloWithDialogButton() {
+	iEnterLocationHeidelberg() {
 		this.waitFor({
-			id: "helloButton",
+			id: "location",
 			viewName,
-			actions: new Press(),
-			errorMessage:
-				"Did not find the 'Say Hello With Dialog' button on the Main view",
-		});
-	}
-
-	iPressTheOkButtonInTheDialog() {
-		this.waitFor({
-			controlType: "sap.m.Button",
-			searchOpenDialogs: true,
-			viewName,
-			actions: new Press(),
-			errorMessage: "Did not find the 'OK' button in the Dialog",
+			actions: new EnterText({
+				text: "Heidelberg",
+			}),
+			errorMessage: "Did not find the 'location' input on the Main view",
 		});
 	}
 
 	// Assertions
-	iShouldSeeTheHelloDialog() {
+	iShouldSeeTheLocationHeidelberg() {
 		this.waitFor({
-			controlType: "sap.m.Dialog",
-			success: function () {
-				// we set the view busy, so we need to query the parent of the app
-				Opa5.assert.ok(true, "The dialog is open");
-			},
-			errorMessage: "Did not find the dialog control",
-		});
-	}
-
-	iShouldNotSeeTheHelloDialog() {
-		this.waitFor({
-			controlType: "sap.m.App", // dummy, I just want a check function, where I can search the DOM. Probably there is a better way for a NEGATIVE test (NO dialog).
-			check: function () {
-				return document.querySelectorAll(".sapMDialog").length === 0;
+			controlType: "sap.m.Text",
+			viewName,
+			check: function (text: UI5Element[]): boolean {
+				return (<Text>text[0]).getText(false).includes("Heidelberg");
 			},
 			success: function () {
-				Opa5.assert.ok(true, "No dialog is open");
+				Opa5.assert.ok(true, "The location Heidelberg is displayed");
 			},
+			errorMessage: "Did not find the text control",
 		});
 	}
 }

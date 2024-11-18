@@ -6,7 +6,7 @@ const onTheMainPage = new MainPage();
 
 QUnit.module("Sample Hello Journey");
 
-opaTest("Should open the Hello dialog", function () {
+opaTest("Should show location Heidelberg", function () {
 	// Arrangements
 	onTheMainPage.iStartMyUIComponent({
 		componentConfig: {
@@ -15,35 +15,10 @@ opaTest("Should open the Hello dialog", function () {
 	});
 
 	// Actions
-	onTheMainPage.iPressTheSayHelloWithDialogButton();
+	onTheMainPage.iEnterLocationHeidelberg();
 
 	// Assertions
-	onTheMainPage.iShouldSeeTheHelloDialog();
-
-	// Actions
-	onTheMainPage.iPressTheOkButtonInTheDialog();
-
-	// Assertions
-	onTheMainPage.iShouldNotSeeTheHelloDialog();
-
-	// Cleanup
-	onTheMainPage.iTeardownMyApp();
-});
-
-opaTest("Should close the Hello dialog", function () {
-	// Arrangements
-	onTheMainPage.iStartMyUIComponent({
-		componentConfig: {
-			name: "hello.world.ts",
-		},
-	});
-
-	// Actions
-	onTheMainPage.iPressTheSayHelloWithDialogButton();
-	onTheMainPage.iPressTheOkButtonInTheDialog();
-
-	// Assertions
-	onTheMainPage.iShouldNotSeeTheHelloDialog();
+	onTheMainPage.iShouldSeeTheLocationHeidelberg();
 
 	// Cleanup
 	onTheMainPage.iTeardownMyApp();
