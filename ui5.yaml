@@ -24,5 +24,3 @@ server:
       afterMiddleware: compression
     - name: ui5-tooling-transpile-middleware
       afterMiddleware: compression
-    - name: ui5-middleware-livereload
-      afterMiddleware: compression

@@ -1,0 +1,36 @@
+<mvc:View controllerName="hello.world.ts.controller.app.Weather" displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:core="sap.ui.core" core:require="{
+		formatter: 'hello/world/ts/model/formatter'
+	}"
+	xmlns:cc="hello.world.ts.control">
+	<Page title="{i18n>title}" width="100%">
+		<VBox class="sapUiSmallMargin">
+			<Panel>
+				<form:SimpleForm busyIndicatorDelay="0" busy="{main>/BusyWeather}">
+					<!-- Nombre ubicación -->
+					<Input change=".locationChange" placeholder="Enter Location" />
+					<Label text="Place" />
+					<Text text="{main>/CurrentWeather/sPlaceName}" />
+					<!-- Temperatura -->
+					<Label text="Temperature" />
+					<Text text="{main>/CurrentWeather/current_weather/temperature} °C" />
+					<!-- Velocidad viento -->
+					<Label text="Wind Speed" />
+					<Text text="{main>/CurrentWeather/current_weather/windspeed} km/h" />
+					<!-- Dirección viento -->
+					<Label text="Wind Direction" />
+					<Text text="{main>/CurrentWeather/current_weather/winddirection} °" />
+					<!-- Viento visualización -->
+					<Label text="Wind Visualization" />
+					<cc:WindDirection direction="{main>/CurrentWeather/current_weather/winddirection}" />
+				</form:SimpleForm>
+				<FlexBox justifyContent="Center" class="sapUiSmallMarginTop">
+					<Button text='{i18n>0002}' press="onNavToHome"/>
+				</FlexBox>
+			</Panel>
+		</VBox>
+	</Page>
+</mvc:View>

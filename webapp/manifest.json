@@ -47,6 +47,10 @@
 			}
 		},
 
+		"config": {
+      "fullWidth": true
+    },
+
 		"handleValidation": true,
 
 		"contentDensities": {
@@ -74,15 +78,24 @@
 			},
 			"routes": [
 				{
-					"pattern": "",
-					"name": "main",
-					"target": "main"
+          "pattern": "",
+          "name": "home",
+          "target": ["home"]
+        },
+				{
+					"pattern": "weather",
+					"name": "weather",
+					"target": "weather"
 				}
 			],
 			"targets": {
-				"main": {
-					"viewId": "main",
-					"viewName": "Main"
+				"home": {
+					"viewId": "Home",
+					"viewName": "app.Home"
+				},
+				"weather": {
+					"viewId": "weather",
+					"viewName": "app.Weather"
 				}
 			}
 		}

@@ -1,0 +1,38 @@
+<mvc:View controllerName="hello.world.ts.controller.app.Home" displayBlock="true" height="100%"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Page busyIndicatorDelay="0" enableScrolling="false">
+		<VBox class="sapUiLargeMarginTop" alignItems="Center">
+			<Title titleStyle="H3" text="{i18n>0002}" />
+			<Panel class="sapUiLargeMarginTop">
+				<content>
+					<f:Form editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="true" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="{i18n>0003}">
+										<f:fields>
+											<Input value="{main>/DataUser/user}" type="Text" maxLength="20" placeholder="{i18n>0003}" />
+										</f:fields>
+									</f:FormElement>
+									<f:FormElement>
+										<f:fields>
+											<Button text="{i18n>0004}" press="onNavToWeather" type="Emphasized" width="100%" enabled="true" class="sapUiSmallMarginTop"/>
+										</f:fields>
+										<f:fields>
+											<Button text="{i18n>0004}" press="onNavToWeather" type="Emphasized" width="100%" enabled="true" class="sapUiSmallMarginTop"/>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</content>
+			</Panel>
+		</VBox>
+	</Page>
+</mvc:View>

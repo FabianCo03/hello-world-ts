@@ -6,6 +6,8 @@ import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import ResourceBundle from "sap/base/i18n/ResourceBundle";
 import Router from "sap/ui/core/routing/Router";
 import History from "sap/ui/core/routing/History";
+import JSONModel from "sap/ui/model/json/JSONModel";
+import Route from "sap/ui/core/routing/Route";
 
 /**
  * @namespace hello.world.ts.controller
@@ -18,7 +20,6 @@ export default abstract class BaseController extends Controller {
 	public getOwnerComponent(): AppComponent {
 		return super.getOwnerComponent() as AppComponent;
 	}
-
 	/**
 	 * Convenience method to get the components' router instance.
 	 * @returns The router instance
@@ -56,6 +57,16 @@ export default abstract class BaseController extends Controller {
 		return this;
 	}
 
+	// Iniciar variables globales
+	public oRouter!: Router;
+	public oRouteDetail!: Route;
+	// Iniciar modelo main
+	public oMain!: JSONModel;
+	public initMainModel(): void {
+		this.oMain = new JSONModel({});
+		this.setModel(this.oMain, "main");
+	}
+
 	/**
 	 * Convenience method for triggering the navigation to a specific target.
 	 * @public
@@ -67,11 +78,6 @@ export default abstract class BaseController extends Controller {
 		this.getRouter().navTo(sName, oParameters, undefined, bReplace);
 	}
 
-	/**
-	 * Convenience event handler for navigating back.
-	 * It there is a history entry we go one step back in the browser history
-	 * If not, it will replace the current entry of the browser history with the main route.
-	 */
 	public onNavBack(): void {
 		const sPreviousHash = History.getInstance().getPreviousHash();
 		if (sPreviousHash !== undefined) {
@@ -81,14 +87,22 @@ export default abstract class BaseController extends Controller {
 		}
 	}
 
+	onNavToHome() {
+		this.navTo("home");
+	}
+
+	onNavToWeather() {
+		this.navTo("weather");
+	}
+
 	// Busy sacado de apps de ventas
 	busy(action: boolean) {
-		const [oPage] = this.getView().getContent()
+		const [oPage] = this.getView().getContent();
 		if (oPage) {
 			if (action) {
-				oPage.setBusy(true)
+				oPage.setBusy(true);
 			} else {
-				oPage.setBusy(false)
+				oPage.setBusy(false);
 			}
 		}
 	}

@@ -16,9 +16,9 @@ export default class Component extends UIComponent {
 		// call the base component's init function
 		super.init();
 
-		// create the device model
+		// Create models
 		this.setModel(models.createDeviceModel(), "device");
-
+		this.setModel(models.createMainModel(), "main");
 		// create the views based on the url/hash
 		this.getRouter().initialize();
 	}

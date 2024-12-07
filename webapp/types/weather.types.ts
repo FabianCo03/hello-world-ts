@@ -3,6 +3,6 @@ export interface WeatherInfo {
 		temperature: number;
 		windspeed: number;
 		winddirection: number;
+		sPlaceName: string;
 	};
-	sPlaceName: string;
 }

@@ -12,8 +12,6 @@
 		"types": ["@openui5/types", "@types/qunit"],
 		"paths": {
 			"hello/world/ts/*": ["./webapp/*"],
-			"unit/*": ["./webapp/test/unit/*"],
-			"integration/*": ["./webapp/test/integration/*"]
 		}
 	},
 	"include": ["webapp/**/*"],
